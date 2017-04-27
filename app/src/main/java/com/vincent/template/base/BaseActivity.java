@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.Window;
 
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import com.vincent.template.R;
 import com.vincent.template.manager.AppManager;
-import com.vincent.template.manager.ChangeModeController;
 import com.vincent.template.manager.RxManager;
 import com.vincent.template.utils.Loading;
 import com.vincent.template.utils.StatusBarCompat;
@@ -98,8 +98,6 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
      * 设置layout前配置
      */
     private void doBeforeSetcontentView() {
-        //设置昼夜主题
-        initTheme();
         // 把actvity放到application栈中管理
         AppManager.getAppManager().addActivity(this);
         // 无标题
@@ -118,13 +116,17 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
     //初始化view
     public abstract void initView();
 
-
-    /**
-     * 设置主题
-     */
-    private void initTheme() {
-        ChangeModeController.setTheme(this, R.style.DayTheme, R.style.NightTheme);
+    public void useNightMode(boolean isNight) {
+        if (isNight) {
+            AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_NO);
+        }
+        recreate();
     }
+
     /**
      * 着色状态栏（4.4以上系统有效）
      */
@@ -184,22 +186,6 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
         }
         startActivity(intent);
     }
-
-    /**
-     * 开启浮动加载进度条
-     */
-    public void startProgressDialog() {
-        Loading.showLoading(this , 0);
-    }
-
-
-    /**
-     * 停止浮动加载进度条
-     */
-    public void stopProgressDialog() {
-        Loading.hideLoading();
-    }
-
 
     @Override
     protected void onDestroy() {

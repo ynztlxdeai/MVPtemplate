@@ -129,23 +129,6 @@ public abstract  class BaseFragment<T extends BasePresenter, E extends BaseModel
         startActivity(intent);
     }
 
-
-
-    /**
-     * 开启加载进度条
-     */
-    public void startProgressDialog() {
-        Loading.showLoading(getActivity() , 0);
-    }
-
-
-    /**
-     * 停止加载进度条
-     */
-    public void stopProgressDialog() {
-        Loading.hideLoading();
-    }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
