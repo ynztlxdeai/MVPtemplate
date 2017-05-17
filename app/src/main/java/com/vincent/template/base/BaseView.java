@@ -17,6 +17,6 @@ package com.vincent.template.base;
 public interface BaseView {
     /*******内嵌加载*******/
     void showLoading();
-    void stopLoading();
+    void Loading();
     void showErrorTip(String msg);
 }
