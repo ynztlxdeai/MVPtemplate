@@ -8,6 +8,18 @@ import com.vincent.template.recycler.ViewHolderHelper;
 
 import java.util.List;
 
+/**
+ * packageName:	    com.vincent.template.recycler.adapter
+ * className:	    MultiItemRecycleViewAdapter
+ * author:	        Luoxiang
+ * time:	        2017/6/8	14:31
+ * desc:	        多类型条目
+ *
+ * svnVersion:
+ * upDateAuthor:    Vincent
+ * upDate:          2017/6/8
+ * upDateDesc:      TODO
+ */
 public abstract class MultiItemRecycleViewAdapter<T> extends CommonRecycleViewAdapter<T>
 {
 
