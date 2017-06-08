@@ -21,7 +21,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by zhy on 16/4/9.
+ * packageName:	    com.vincent.template.recycler.adapter
+ * className:	    CommonRecycleViewAdapter
+ * author:	        Luoxiang
+ * time:	        2017/6/8	14:04
+ * desc:	        常规的适配器
+ *
+ * svnVersion:
+ * upDateAuthor:    Vincent
+ * upDate:          2017/6/8
+ * upDateDesc:      TODO
  */
 public abstract class CommonRecycleViewAdapter<T> extends RecyclerView.Adapter<ViewHolderHelper> implements
                                                                                                  DataIO<T>
