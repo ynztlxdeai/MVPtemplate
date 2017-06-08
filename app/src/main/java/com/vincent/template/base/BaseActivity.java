@@ -68,11 +68,11 @@ import butterknife.Unbinder;
 //}
 
 
-public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel> extends
+public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel> extends
                                                                                  RxAppCompatActivity
 {
-    public T         mPresenter;
-    public E         mModel;
+    public P         mPresenter;
+    public M         mModel;
     public Context   mContext;
     public RxManager mRxManager;
     private Unbinder mBind;

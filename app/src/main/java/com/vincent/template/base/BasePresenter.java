@@ -18,13 +18,13 @@ import com.vincent.template.manager.RxManager;
  */
 
 
-public abstract class BasePresenter<T,E>{
+public abstract class BasePresenter<M,V>{
     public Context mContext;
-    public E       mModel;
-    public T       mView;
+    public M       mModel;
+    public V       mView;
     public RxManager mRxManage = new RxManager();
 
-    public void setVM(T v, E m) {
+    public void setVM(V v, M m) {
         this.mView = v;
         this.mModel = m;
         this.onStart();
