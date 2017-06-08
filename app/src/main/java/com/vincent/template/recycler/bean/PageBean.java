@@ -4,7 +4,16 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * 分页信息 默认一页10条
+ * packageName:	    com.vincent.template.recycler.bean
+ * className:	    PageBean
+ * author:	        Luoxiang
+ * time:	        2017/6/8	14:06
+ * desc:	        分页信息 默认一页10条
+ *
+ * svnVersion:
+ * upDateAuthor:    Vincent
+ * upDate:          2017/6/8
+ * upDateDesc:      TODO
  */
 public  class PageBean
         implements Parcelable {
