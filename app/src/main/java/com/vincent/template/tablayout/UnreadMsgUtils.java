@@ -1,5 +1,9 @@
 package com.vincent.template.tablayout;
 
+import android.util.DisplayMetrics;
+import android.view.View;
+import android.widget.RelativeLayout;
+
 /**
  * projectName: 	    Template
  * packageName:	        com.vincent.template.tablayout
@@ -15,18 +19,14 @@ package com.vincent.template.tablayout;
  * upDate:	            2017/5/17
  * upDateDesc:	        TODO
  */
-
-import android.util.DisplayMetrics;
-import android.view.View;
-import android.widget.RelativeLayout;
-
 public class UnreadMsgUtils {
     public static void show(MsgView msgView, int num) {
         if (msgView == null) {
             return;
         }
         RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) msgView.getLayoutParams();
-        DisplayMetrics              dm = msgView.getResources().getDisplayMetrics();
+        DisplayMetrics              dm = msgView.getResources()
+                                                .getDisplayMetrics();
         msgView.setVisibility(View.VISIBLE);
         if (num <= 0) {//圆点,设置默认宽高
             msgView.setStrokeWidth(0);

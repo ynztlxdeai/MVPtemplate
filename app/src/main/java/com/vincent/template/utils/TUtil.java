@@ -14,8 +14,6 @@ import java.lang.reflect.ParameterizedType;
  * upDate:          2017/4/4
  * upDateDesc:      TODO
  */
-
-
 public class TUtil {
     public static <T> T getT(Object o, int i) {
         try {

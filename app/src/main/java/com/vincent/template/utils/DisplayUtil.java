@@ -19,8 +19,6 @@ import com.vincent.template.app.App;
  * upDate:	            2017/4/4
  * upDateDesc:	        TODO
  */
-
-
 public class DisplayUtil {
     /**
      * Change SP to PX
