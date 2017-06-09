@@ -1,4 +1,4 @@
-package com.vincent.template.recycler;
+package com.vincent.template.recycler.event;
 
 import java.util.List;
 

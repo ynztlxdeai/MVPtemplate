@@ -1,4 +1,4 @@
-package com.aspsine.irecyclerview;
+package com.vincent.template.recycler.adapter;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,10 +8,13 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
+import com.vincent.template.recycler.view.RefreshHeaderLayout;
+
 /**
  * Created by aspsine on 16/3/12.
  */
-public class WrapperAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class WrapperAdapter
+        extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     protected static final int REFRESH_HEADER = Integer.MIN_VALUE;
     protected static final int HEADER = Integer.MIN_VALUE + 1;
     protected static final int FOOTER = Integer.MAX_VALUE - 1;

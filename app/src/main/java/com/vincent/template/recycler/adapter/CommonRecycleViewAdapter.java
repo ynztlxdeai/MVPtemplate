@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 
-import com.vincent.template.recycler.DataIO;
-import com.vincent.template.recycler.OnItemClickListener;
+import com.vincent.template.recycler.event.DataIO;
+import com.vincent.template.recycler.event.OnItemClickListener;
 import com.vincent.template.recycler.ViewHolderHelper;
 import com.vincent.template.recycler.animation.AlphaInAnimation;
 import com.vincent.template.recycler.animation.BaseAnimation;

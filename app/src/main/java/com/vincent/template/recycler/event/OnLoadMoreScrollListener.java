@@ -1,4 +1,4 @@
-package com.aspsine.irecyclerview;
+package com.vincent.template.recycler.event;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -14,8 +14,8 @@ public abstract class OnLoadMoreScrollListener extends RecyclerView.OnScrollList
 
     @Override
     public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-        RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
-        int visibleItemCount = layoutManager.getChildCount();
+        RecyclerView.LayoutManager layoutManager    = recyclerView.getLayoutManager();
+        int                        visibleItemCount = layoutManager.getChildCount();
 
 
         boolean triggerCondition = visibleItemCount > 0
@@ -28,10 +28,10 @@ public abstract class OnLoadMoreScrollListener extends RecyclerView.OnScrollList
     }
 
     public boolean canTriggerLoadMore(RecyclerView recyclerView) {
-        View lastChild = recyclerView.getChildAt(recyclerView.getChildCount() - 1);
-        int position = recyclerView.getChildLayoutPosition(lastChild);
-        RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
-        int totalItemCount = layoutManager.getItemCount();
+        View                       lastChild      = recyclerView.getChildAt(recyclerView.getChildCount() - 1);
+        int                        position       = recyclerView.getChildLayoutPosition(lastChild);
+        RecyclerView.LayoutManager layoutManager  = recyclerView.getLayoutManager();
+        int                        totalItemCount = layoutManager.getItemCount();
         return totalItemCount - 1 == position;
     }
 

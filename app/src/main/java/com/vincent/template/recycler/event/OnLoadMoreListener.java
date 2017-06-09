@@ -1,4 +1,4 @@
-package com.aspsine.irecyclerview;
+package com.vincent.template.recycler.event;
 
 import android.view.View;
 

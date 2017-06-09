@@ -3,7 +3,7 @@ package com.vincent.template.recycler.adapter;
 import android.content.Context;
 import android.view.ViewGroup;
 
-import com.vincent.template.recycler.MultiItemTypeSupport;
+import com.vincent.template.recycler.event.MultiItemTypeSupport;
 import com.vincent.template.recycler.ViewHolderHelper;
 
 import java.util.List;
