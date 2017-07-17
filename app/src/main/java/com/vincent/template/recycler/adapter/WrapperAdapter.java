@@ -11,7 +11,16 @@ import android.widget.LinearLayout;
 import com.vincent.template.recycler.view.RefreshHeaderLayout;
 
 /**
- * Created by aspsine on 16/3/12.
+ * packageName:	    com.vincent.template.recycler.adapter
+ * className:	    WrapperAdapter
+ * author:	        Luoxiang
+ * time:	        2017/7/17	15:00
+ * desc:	        适配器包装类
+ *
+ * svnVersion:
+ * upDateAuthor:    Vincent
+ * upDate:          2017/7/17
+ * upDateDesc:      TODO
  */
 public class WrapperAdapter
         extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

@@ -13,7 +13,7 @@ import butterknife.BindView;
  * className:	        SplashActivity
  * author:	            Luoxiang
  * time:	            2017/4/5	14:38
- * desc:	            TODO
+ * desc:	            启动页 简单实现 不使用MVP模式
  *
  * svnVersion:	        $Rev
  * upDateAuthor:	    Vincent
