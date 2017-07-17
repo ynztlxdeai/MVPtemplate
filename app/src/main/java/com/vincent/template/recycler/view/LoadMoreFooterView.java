@@ -9,7 +9,16 @@ import android.widget.FrameLayout;
 import com.vincent.template.R;
 
 /**
- * Created by aspsine on 16/3/14.
+ * packageName:	    com.vincent.template.recycler.view
+ * className:	    LoadMoreFooterView
+ * author:	        Luoxiang
+ * time:	        2017/7/17	14:56
+ * desc:	        加载更多的脚
+ *
+ * svnVersion:
+ * upDateAuthor:    Vincent
+ * upDate:          2017/7/17
+ * upDateDesc:      TODO
  */
 public class LoadMoreFooterView
         extends FrameLayout {

@@ -4,7 +4,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 /**
- * Created by aspsine on 16/3/13.
+ * packageName:	    com.vincent.template.recycler.event
+ * className:	    OnLoadMoreScrollListener
+ * author:	        Luoxiang
+ * time:	        2017/7/17	14:57
+ * desc:	        滑动监听
+ *
+ * svnVersion:
+ * upDateAuthor:    Vincent
+ * upDate:          2017/7/17
+ * upDateDesc:      TODO
  */
 public abstract class OnLoadMoreScrollListener extends RecyclerView.OnScrollListener {
 

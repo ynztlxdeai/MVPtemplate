@@ -28,7 +28,16 @@ import com.vincent.template.recycler.event.RefreshTrigger;
 import com.vincent.template.recycler.event.SimpleAnimatorListener;
 
 /**
- * Created by aspsine on 16/3/3.
+ * packageName:	    com.vincent.template.recycler.view
+ * className:	    IRecyclerView
+ * author:	        Luoxiang
+ * time:	        2017/7/17	14:55
+ * desc:	        自实现RecyclerView
+ *
+ * svnVersion:
+ * upDateAuthor:    Vincent
+ * upDate:          2017/7/17
+ * upDateDesc:      TODO
  */
 public class IRecyclerView
         extends RecyclerView

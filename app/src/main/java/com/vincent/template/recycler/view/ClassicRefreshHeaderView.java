@@ -14,7 +14,16 @@ import com.vincent.template.recycler.event.RefreshTrigger;
 
 
 /**
- * Created by aspsine on 16/3/14.
+ * packageName:	    com.vincent.template.recycler.view
+ * className:	    ClassicRefreshHeaderView
+ * author:	        Luoxiang
+ * time:	        2017/7/17	14:57
+ * desc:	        经典的额下拉刷新头
+ *
+ * svnVersion:
+ * upDateAuthor:    Vincent
+ * upDate:          2017/7/17
+ * upDateDesc:      TODO
  */
 public class ClassicRefreshHeaderView
         extends RelativeLayout implements RefreshTrigger

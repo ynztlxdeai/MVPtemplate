@@ -6,7 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by aspsine on 16/3/7.
+ * packageName:	    com.vincent.template.recycler.view
+ * className:	    RefreshHeaderLayout
+ * author:	        Luoxiang
+ * time:	        2017/7/17	14:56
+ * desc:	        下拉刷新头
+ *
+ * svnVersion:
+ * upDateAuthor:    Vincent
+ * upDate:          2017/7/17
+ * upDateDesc:      TODO
  */
 public class RefreshHeaderLayout
         extends ViewGroup {

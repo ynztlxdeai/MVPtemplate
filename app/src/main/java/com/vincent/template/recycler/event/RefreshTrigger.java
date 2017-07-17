@@ -1,7 +1,15 @@
 package com.vincent.template.recycler.event;
-
 /**
- * Created by aspsine on 16/3/7.
+ * packageName:	    com.vincent.template.recycler.event
+ * className:	    RefreshTrigger
+ * author:	        Luoxiang
+ * time:	        2017/7/17	14:58
+ * desc:	        刷新触发器
+ *
+ * svnVersion:
+ * upDateAuthor:    Vincent
+ * upDate:          2017/7/17
+ * upDateDesc:      TODO
  */
 public interface RefreshTrigger {
 

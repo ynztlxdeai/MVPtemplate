@@ -1,9 +1,17 @@
 package com.vincent.template.recycler.event;
 
 import android.animation.Animator;
-
 /**
- * Created by aspsine on 16/3/13.
+ * packageName:	    com.vincent.template.recycler.event
+ * className:	    SimpleAnimatorListener
+ * author:	        Luoxiang
+ * time:	        2017/7/17	14:58
+ * desc:	        简单的动画包装类
+ *
+ * svnVersion:
+ * upDateAuthor:    Vincent
+ * upDate:          2017/7/17
+ * upDateDesc:      TODO
  */
 public class SimpleAnimatorListener
         implements Animator.AnimatorListener {
