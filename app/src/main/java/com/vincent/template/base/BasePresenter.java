@@ -2,7 +2,7 @@ package com.vincent.template.base;
 
 import android.content.Context;
 
-import com.vincent.template.manager.RxManager;
+import com.vincent.template.rx.RxManager;
 
 /**
  * packageName:	    com.vincent.template.base

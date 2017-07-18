@@ -12,8 +12,7 @@ import android.view.Window;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import com.vincent.template.R;
 import com.vincent.template.manager.AppManager;
-import com.vincent.template.manager.RxManager;
-import com.vincent.template.utils.Loading;
+import com.vincent.template.rx.RxManager;
 import com.vincent.template.utils.StatusBarCompat;
 import com.vincent.template.utils.TUtil;
 
@@ -71,11 +70,11 @@ import butterknife.Unbinder;
 public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel> extends
                                                                                  RxAppCompatActivity
 {
-    public P         mPresenter;
-    public M         mModel;
-    public Context   mContext;
-    public RxManager mRxManager;
-    private Unbinder mBind;
+    public  P         mPresenter;
+    public  M         mModel;
+    public  Context   mContext;
+    public  RxManager mRxManager;
+    private Unbinder  mBind;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

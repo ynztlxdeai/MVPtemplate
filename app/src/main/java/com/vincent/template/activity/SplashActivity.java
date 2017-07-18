@@ -6,8 +6,6 @@ import com.vincent.template.R;
 import com.vincent.template.base.BaseActivity;
 
 import butterknife.BindView;
-import io.reactivex.Flowable;
-import io.reactivex.Single;
 
 /**
  * projectName: 	    Template

@@ -8,8 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.trello.rxlifecycle.components.support.RxFragment;
-import com.vincent.template.manager.RxManager;
-import com.vincent.template.utils.Loading;
+import com.vincent.template.rx.RxManager;
 import com.vincent.template.utils.TUtil;
 
 import butterknife.ButterKnife;
@@ -64,7 +63,7 @@ public abstract  class BaseFragment<P extends BasePresenter, M extends BaseModel
     public    P         mPresenter;
     public    M         mModel;
     public    RxManager mRxManager;
-    private Unbinder mBind;
+    private   Unbinder  mBind;
 
     @Nullable
     @Override
