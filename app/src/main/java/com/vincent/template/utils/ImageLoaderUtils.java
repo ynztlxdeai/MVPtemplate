@@ -3,7 +3,11 @@ package com.vincent.template.utils;
 import android.content.Context;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DecodeFormat;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.vincent.template.R;
+import com.vincent.template.views.GlideRoundTransformUtil;
 
 import java.io.File;
 
