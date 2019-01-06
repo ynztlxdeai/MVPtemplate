@@ -1,6 +1,6 @@
 package com.vincent.template.tablayout;
 
-import android.support.annotation.DrawableRes;
+import androidx.annotation.DrawableRes;
 
 /**
  * projectName: 	    Template
