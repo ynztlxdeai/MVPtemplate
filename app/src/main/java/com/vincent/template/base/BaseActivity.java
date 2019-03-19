@@ -5,17 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.app.AppCompatDelegate;
 import android.view.Window;
 
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
+import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
 import com.vincent.template.R;
 import com.vincent.template.manager.AppManager;
 import com.vincent.template.rx.RxManager;
 import com.vincent.template.utils.StatusBarCompat;
 import com.vincent.template.utils.TUtil;
 
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
