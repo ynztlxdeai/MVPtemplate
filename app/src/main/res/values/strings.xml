@@ -12,4 +12,10 @@
     <string name="reload">重新尝试</string>
     <string name="no_net">网络不可用,请检查你的网络</string>
     <string name="launch">引导</string>
+
+    <string name="rationale_ask_again">
+        This app may not work correctly without the requested permissions.
+        Open the app settings screen to modify app permissions.
+    </string>
+    <string name="title_settings_dialog">Permissions Required</string>
 </resources>
