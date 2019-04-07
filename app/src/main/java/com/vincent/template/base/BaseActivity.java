@@ -90,7 +90,7 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
             mPresenter.mContext=this;
         }
         this.initPresenter();
-        this.initView();
+        this.initView(savedInstanceState);
     }
 
     /**
@@ -113,7 +113,7 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
     //简单页面无需mvp就不用管此方法即可,完美兼容各种实际场景的变通
     public abstract void initPresenter();
     //初始化view
-    public abstract void initView();
+    public abstract void initView(Bundle savedInstanceState);
 
     public void useNightMode(boolean isNight) {
         if (isNight) {

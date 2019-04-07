@@ -1,5 +1,6 @@
 package com.vincent.template.activity;
 
+import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.vincent.template.R;
@@ -39,7 +40,7 @@ public class SplashActivity
     }
 
     @Override
-    public void initView() {
+    public void initView(Bundle savedInstanceState) {
         mSplashIv.postDelayed(() -> {
 
         } , 3000);
