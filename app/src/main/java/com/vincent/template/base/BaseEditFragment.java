@@ -1,4 +1,4 @@
-package com.business.business.base;
+package com.vincent.template.base;
 
 import android.os.Bundle;
 import android.os.IBinder;
@@ -8,20 +8,20 @@ import android.view.inputmethod.InputMethodManager;
 import androidx.annotation.Nullable;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
-
 /**
- * projectName: 	    Business
- * packageName:	        com.business.business.base
- * className:	        BaseEditFragment
- * author:	            Luoxiang
- * time:	            19/01/2019	11:38 PM
- * desc:	            方便调用隐藏键盘
+ * packageName:	    com.vincent.template.base
+ * className:	    BaseEditFragment
+ * author:	        Luoxiang
+ * time:	        28/05/2019	2:08 PM
+ * desc:	        方便调用隐藏键盘
  *
- * svnVersion:	        $Rev
- * upDateAuthor:	    luoxiang
- * upDate:	            19/01/2019
- * upDateDesc:	        方便调用隐藏键盘
+ * svnVersion:
+ * upDateAuthor:    luoxiang
+ * upDate:          28/05/2019
+ * upDateDesc:      方便调用隐藏键盘
  */
+
+
 public abstract class BaseEditFragment<P extends BasePresenter, M extends BaseModel> extends  BaseFragment<P , M>{
 
     protected InputMethodManager mInputMethodManager;
