@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.trello.rxlifecycle3.components.RxFragment;
 import com.vincent.template.rx.RxManager;
 import com.vincent.template.utils.TUtil;
 
@@ -58,7 +57,7 @@ import butterknife.Unbinder;
 //    public void initView() {
 //    }
 //}
-public abstract  class BaseFragment<P extends BasePresenter, M extends BaseModel> extends RxFragment {
+public abstract  class BaseFragment<P extends BasePresenter, M extends BaseModel> extends com.trello.rxlifecycle3.components.support.RxFragment {
     protected View      rootView;
     public    P         mPresenter;
     public    M         mModel;
