@@ -4,10 +4,6 @@ import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
-import androidx.annotation.LayoutRes;
-import androidx.annotation.Nullable;
-import androidx.core.view.MotionEventCompat;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -26,6 +22,11 @@ import com.vincent.template.recycler.event.OnLoadMoreScrollListener;
 import com.vincent.template.recycler.event.OnRefreshListener;
 import com.vincent.template.recycler.event.RefreshTrigger;
 import com.vincent.template.recycler.event.SimpleAnimatorListener;
+
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
+import androidx.core.view.MotionEventCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * packageName:	    com.vincent.template.recycler.view
@@ -175,6 +176,9 @@ public class IRecyclerView
                 removeOnScrollListener(mOnLoadMoreScrollListener);
             }
             addOnScrollListener(mOnLoadMoreScrollListener);
+            if (mLoadMoreFooterContainer != null && mLoadMoreFooterContainer.getVisibility() != VISIBLE){
+                mLoadMoreFooterContainer.setVisibility(VISIBLE);
+            }
         } else {
 
             if (mLoadMoreFooterView != null) {
@@ -184,6 +188,9 @@ public class IRecyclerView
             if (mOnLoadMoreScrollListener != null) {
                 removeOnScrollListener(mOnLoadMoreScrollListener);
 
+            }
+            if (mLoadMoreFooterContainer != null && mLoadMoreFooterContainer.getVisibility() != GONE){
+                mLoadMoreFooterContainer.setVisibility(GONE);
             }
         }
     }
@@ -284,6 +291,9 @@ public class IRecyclerView
         final View loadMoreFooter = LayoutInflater.from(getContext()).inflate(loadMoreFooterLayoutRes, mLoadMoreFooterContainer, false);
         if (loadMoreFooter != null) {
             setLoadMoreFooterView(loadMoreFooter);
+        }
+        if (!mLoadMoreEnabled && mLoadMoreFooterContainer != null){
+            mLoadMoreFooterContainer.setVisibility(GONE);
         }
     }
 
