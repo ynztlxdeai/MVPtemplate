@@ -4,13 +4,15 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
-import androidx.core.view.ViewCompat;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+
+import androidx.annotation.DrawableRes;
+import androidx.core.view.ViewCompat;
 
 /**
  * packageName:	    com.vincent.template.utils
@@ -143,6 +145,30 @@ public class StatusBarCompat {
                     mDecorView.setTag(false);
                 }
             }
+        }
+    }
+
+
+    /**
+     *     //设置状态栏颜; 渐变方式
+     *     getWindow().getDecorView().addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+     *         @Override
+     *         public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+     *             initStatusBar();
+     *             getWindow().getDecorView().removeOnLayoutChangeListener(this);
+     *         }
+     *     });
+     */
+    public static void initStatusBar(Activity context, @DrawableRes int res) {
+
+        //利用反射机制修改状态栏背景
+        int identifier = context.getResources()
+                                .getIdentifier("statusBarBackground", "id", "android");
+        View statusBarView = context.getWindow()
+                                    .findViewById(identifier);
+
+        if (statusBarView != null) {
+            statusBarView.setBackgroundResource(res);
         }
     }
 
