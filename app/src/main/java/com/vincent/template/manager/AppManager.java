@@ -26,18 +26,24 @@ public class AppManager {
     private AppManager() {
     }
 
+
     /**
      * 结束除了传入的class之外的所有页面
      * @param cls
      */
     public synchronized void singleActivity(Class<?> cls){
-        Activity activity = activityStack.peek();
-        while (!activity.getClass().equals(cls)){
-            if (activity != null){
+        Activity activity = null;
+        while (!activityStack.empty()){
+            activity = activityStack.peek();
+            if (activity != null && !activity.getClass().equals(cls)){
                 activityStack.remove(activity);
                 activity.finish();
+            }else {
+                activityStack.remove(activity);
             }
-            activity = activityStack.peek();
+        }
+        if (activity != null){
+            activityStack.add(activity);
         }
     }
 
