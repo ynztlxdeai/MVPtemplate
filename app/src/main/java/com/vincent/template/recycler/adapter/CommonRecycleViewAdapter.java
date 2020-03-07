@@ -2,7 +2,6 @@ package com.vincent.template.recycler.adapter;
 
 import android.animation.Animator;
 import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,15 +9,17 @@ import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 
-import com.vincent.template.recycler.event.DataIO;
-import com.vincent.template.recycler.event.OnItemClickListener;
 import com.vincent.template.recycler.ViewHolderHelper;
 import com.vincent.template.recycler.animation.AlphaInAnimation;
 import com.vincent.template.recycler.animation.BaseAnimation;
 import com.vincent.template.recycler.bean.PageBean;
+import com.vincent.template.recycler.event.DataIO;
+import com.vincent.template.recycler.event.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * packageName:	    com.vincent.template.recycler.adapter
@@ -189,6 +190,9 @@ public abstract class CommonRecycleViewAdapter<T> extends RecyclerView.Adapter<V
     @Override
     public int getItemCount()
     {
+        if (mDatas == null){
+            return 0;
+        }
         return mDatas.size();
     }
 
