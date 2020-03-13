@@ -144,14 +144,6 @@
     </declare-styleable>
 
 
-    <declare-styleable name="IRecyclerView">
-        <attr name="refreshHeaderLayout" format="reference"/>
-        <attr name="loadMoreFooterLayout" format="reference"/>
-        <attr name="refreshEnabled" format="boolean"/>
-        <attr name="loadMoreEnabled" format="boolean"/>
-        <attr name="refreshFinalMoveOffset" format="dimension"/>
-    </declare-styleable>
-
     <!-- CircleProgressView -->
     <declare-styleable name="CircleProgressView">
         <attr name="matProg_progressIndeterminate" format="boolean" />
