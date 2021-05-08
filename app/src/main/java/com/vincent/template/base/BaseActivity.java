@@ -4,18 +4,19 @@ package com.vincent.template.base;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 
 import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
-import com.vincent.template.R;
 import com.vincent.template.manager.AppManager;
 import com.vincent.template.rx.RxManager;
-import com.vincent.template.utils.StatusBarCompat;
 import com.vincent.template.utils.TUtil;
 
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.content.ContextCompat;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -104,7 +105,7 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
         // 设置竖屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // 默认着色状态栏
-        SetStatusBarColor();
+        setStatusBarColor(0);
 
     }
     /*********************子类实现*****************************/
@@ -126,65 +127,29 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
         recreate();
     }
 
+
     /**
      * 着色状态栏（4.4以上系统有效）
      */
-    protected void SetStatusBarColor(){
-        StatusBarCompat.setStatusBarColor(this, ContextCompat.getColor(this, R.color.colorPrimaryDark));
-    }
-    /**
-     * 着色状态栏（4.4以上系统有效）
-     */
-    protected void SetStatusBarColor(int color){
-        StatusBarCompat.setStatusBarColor(this, color);
-    }
-    /**
-     * 沉浸状态栏（4.4以上系统有效）
-     */
-    protected void SetTranslanteBar(){
-        StatusBarCompat.translucentStatusBar(this);
-    }
-
-
-
-    /**
-     * 通过Class跳转界面
-     **/
-    public void startActivity(Class<?> cls) {
-        startActivity(cls, null);
-    }
-
-    /**
-     * 通过Class跳转界面
-     **/
-    public void startActivityForResult(Class<?> cls, int requestCode) {
-        startActivityForResult(cls, null, requestCode);
-    }
-
-    /**
-     * 含有Bundle通过Class跳转界面
-     **/
-    public void startActivityForResult(Class<?> cls, Bundle bundle,
-                                       int requestCode) {
-        Intent intent = new Intent();
-        intent.setClass(this, cls);
-        if (bundle != null) {
-            intent.putExtras(bundle);
+    protected void setStatusBarColor(int color){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(color == 0 ? Color.TRANSPARENT : color);
         }
-        startActivityForResult(intent, requestCode);
     }
 
-    /**
-     * 含有Bundle通过Class跳转界面
-     **/
-    public void startActivity(Class<?> cls, Bundle bundle) {
-        Intent intent = new Intent();
-        intent.setClass(this, cls);
-        if (bundle != null) {
-            intent.putExtras(bundle);
+    protected void fullScreen(int color){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                                                                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(color == 0 ? Color.TRANSPARENT : color);
         }
-        startActivity(intent);
     }
+
 
     @Override
     protected void onDestroy() {
