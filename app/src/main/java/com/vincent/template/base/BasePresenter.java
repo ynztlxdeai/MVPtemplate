@@ -4,8 +4,9 @@ import android.content.Context;
 
 import com.vincent.template.rx.RxManager;
 
+
 /**
- * packageName:	    com.vincent.template.base
+ * packageName:	    io.data.nest.base
  * className:	    BasePresenter
  * author:	        Luoxiang
  * time:	        2017/4/4	15:07

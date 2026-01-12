@@ -39,6 +39,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
 import com.vincent.template.R;
 
 import java.util.ArrayList;
@@ -246,7 +247,7 @@ public class CommonTabLayout extends FrameLayout implements ValueAnimator.Animat
         ImageView iv_tab_icon = (ImageView) tabView.findViewById(R.id.iv_tab_icon);
         iv_tab_icon.setImageResource(mTabEntitys.get(position).getTabUnselectedIcon());
 
-        tabView.setOnClickListener(new View.OnClickListener() {
+        tabView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 int position = (Integer) v.getTag();
@@ -265,7 +266,7 @@ public class CommonTabLayout extends FrameLayout implements ValueAnimator.Animat
 
         /** 每一个Tab的布局参数 */
         LinearLayout.LayoutParams lp_tab = mTabSpaceEqual ?
-                                           new LinearLayout.LayoutParams(0, FrameLayout.LayoutParams.MATCH_PARENT, 1.0f) :
+                                           new LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1.0f) :
                                            new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
         if (mTabWidth > 0) {
             lp_tab = new LinearLayout.LayoutParams((int) mTabWidth, LayoutParams.MATCH_PARENT);

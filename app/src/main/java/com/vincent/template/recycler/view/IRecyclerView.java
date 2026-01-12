@@ -332,7 +332,7 @@ public class IRecyclerView
         }
     }
 
-    public RecyclerView.Adapter getIAdapter() {
+    public Adapter getIAdapter() {
         final WrapperAdapter wrapperAdapter = (WrapperAdapter) getAdapter();
         return wrapperAdapter.getAdapter();
     }

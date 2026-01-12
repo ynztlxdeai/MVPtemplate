@@ -3,12 +3,13 @@ package com.vincent.template.rx;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.reactivex.Flowable;
-import io.reactivex.Scheduler;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Flowable;
+import io.reactivex.rxjava3.core.Scheduler;
+import io.reactivex.rxjava3.disposables.CompositeDisposable;
+import io.reactivex.rxjava3.disposables.Disposable;
+import io.reactivex.rxjava3.functions.Consumer;
+
 
 /**
  * projectName: 	    Template
@@ -27,7 +28,7 @@ public class RxManager {
     public  RxBus                    mRxBus        = RxBus.getInstance();
     //管理rxbus订阅
     private Map<String, Flowable<?>> mProcessorMap = new HashMap<>();
-    private CompositeDisposable      mDisposable   = new CompositeDisposable();
+    private CompositeDisposable mDisposable   = new CompositeDisposable();
 
     public <T> void on(String eventName, Consumer<T> consumer) {
         Flowable<T> flowable = mRxBus.register(eventName);
@@ -48,7 +49,7 @@ public class RxManager {
                                 .subscribe(consumer, (Consumer<? super Throwable>) throwable));
     }
 
-    public <T> void on(String eventName,Scheduler scheduler,
+    public <T> void on(String eventName, Scheduler scheduler,
                        Consumer<T> consumer,
                        Consumer<? extends Throwable> throwable)
     {

@@ -6,15 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.Nullable;
+
+import com.trello.rxlifecycle4.components.support.RxFragment;
 import com.vincent.template.rx.RxManager;
 import com.vincent.template.utils.TUtil;
 
-import androidx.annotation.Nullable;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
- * packageName:	    com.vincent.template.base
+ * packageName:	    io.data.nest.base
  * className:	    BaseFragment
  * author:	        Luoxiang
  * time:	        2017/4/4	15:39
@@ -57,20 +57,20 @@ import butterknife.Unbinder;
 //    public void initView() {
 //    }
 //}
-public abstract  class BaseFragment<P extends BasePresenter, M extends BaseModel> extends com.trello.rxlifecycle3.components.support.RxFragment {
+public abstract  class BaseFragment<P extends BasePresenter, M extends BaseModel> extends RxFragment {
     protected View      rootView;
     public    P         mPresenter;
     public    M         mModel;
-    public    RxManager mRxManager;
-    private   Unbinder  mBind;
+    public RxManager mRxManager;
+
+    protected boolean isClicking = false;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (rootView == null)
-            rootView = inflater.inflate(getLayoutResource(), container, false);
+            rootView = getLayoutResource(container);
         mRxManager=new RxManager();
-        mBind = ButterKnife.bind(this, rootView);
         mPresenter = TUtil.getT(this, 0);
         mModel= TUtil.getT(this,1);
         if(mPresenter!=null){
@@ -81,7 +81,7 @@ public abstract  class BaseFragment<P extends BasePresenter, M extends BaseModel
         return rootView;
     }
     //获取布局文件
-    protected abstract int getLayoutResource();
+    protected abstract View getLayoutResource(ViewGroup container);
     //简单页面无需mvp就不用管此方法即可,完美兼容各种实际场景的变通
     public abstract void initPresenter();
     //初始化view
@@ -133,7 +133,6 @@ public abstract  class BaseFragment<P extends BasePresenter, M extends BaseModel
         if (mPresenter != null){
             mPresenter.onDestroy();
         }
-        mBind.unbind();
         mRxManager.clear();
     }
 

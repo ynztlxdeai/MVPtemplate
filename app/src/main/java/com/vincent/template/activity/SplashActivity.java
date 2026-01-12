@@ -1,12 +1,16 @@
 package com.vincent.template.activity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+
+
+import androidx.annotation.NonNull;
 
 import com.vincent.template.R;
 import com.vincent.template.base.BaseActivity;
+import com.vincent.template.databinding.ActivitySplashBinding;
 
-import butterknife.BindView;
 
 /**
  * projectName: 	    Template
@@ -26,24 +30,23 @@ import butterknife.BindView;
 public class SplashActivity
         extends BaseActivity
 {
-    @BindView(R.id.splash_iv)
-    ImageView mSplashIv;
+
+
+    private com.vincent.template.databinding.ActivitySplashBinding mSplashBinding;
 
     @Override
-    public int getLayoutId() {
-        return R.layout.activity_splash;
+    public View getLayout() {
+        mSplashBinding = ActivitySplashBinding.inflate(getLayoutInflater());
+        return mSplashBinding.getRoot();
     }
 
     @Override
     public void initPresenter() {
-
     }
 
     @Override
     public void initView(Bundle savedInstanceState) {
-        mSplashIv.postDelayed(() -> {
 
-        } , 3000);
     }
 
 }

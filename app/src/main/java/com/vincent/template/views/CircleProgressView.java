@@ -14,10 +14,11 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
 
-import com.vincent.template.R;
+
 
 import androidx.annotation.NonNull;
 
+import com.vincent.template.R;
 
 
 public class CircleProgressView

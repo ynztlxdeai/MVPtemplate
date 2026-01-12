@@ -8,6 +8,7 @@ import android.widget.FrameLayout;
 
 import com.vincent.template.R;
 
+
 /**
  * packageName:	    com.vincent.template.recycler.view
  * className:	    LoadMoreFooterView

@@ -1,7 +1,7 @@
 package com.vincent.template.base;
 
 /**
- * packageName:	    com.vincent.template.base
+ * packageName:	    io.data.nest.base
  * className:	    BaseModel
  * author:	        Luoxiang
  * time:	        2017/4/4	15:16

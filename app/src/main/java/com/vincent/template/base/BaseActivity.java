@@ -11,17 +11,15 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
+import com.trello.rxlifecycle4.components.support.RxAppCompatActivity;
 import com.vincent.template.manager.AppManager;
 import com.vincent.template.rx.RxManager;
 import com.vincent.template.utils.TUtil;
 
-import androidx.appcompat.app.AppCompatDelegate;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
- * packageName:	    com.vincent.template.base
+ * packageName:	    io.data.nest.base
  * className:	    BaseActivity
  * author:	        Luoxiang
  * time:	        2017/4/4	15:13
@@ -69,21 +67,20 @@ import butterknife.Unbinder;
 
 
 public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel> extends
-                                                                                 RxAppCompatActivity
+        RxAppCompatActivity
 {
     public  P         mPresenter;
     public  M         mModel;
     public  Context   mContext;
-    public  RxManager mRxManager;
-    private Unbinder  mBind;
+    public RxManager mRxManager;
+    protected boolean isClicking = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mRxManager=new RxManager();
         doBeforeSetcontentView();
-        setContentView(getLayoutId());
-        mBind = ButterKnife.bind(this);
+        setContentView(getLayout());
         mContext = this;
         mPresenter = TUtil.getT(this, 0);
         mModel= TUtil.getT(this, 1);
@@ -110,7 +107,7 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
     }
     /*********************子类实现*****************************/
     //获取布局文件
-    public abstract int getLayoutId();
+    public abstract View getLayout();
     //简单页面无需mvp就不用管此方法即可,完美兼容各种实际场景的变通
     public abstract void initPresenter();
     //初始化view
@@ -150,6 +147,25 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
         }
     }
 
+    /**
+     * 通过Class跳转界面
+     **/
+    public void startActivity(Class<?> cls) {
+        startActivity(cls, null);
+    }
+
+    /**
+     * 含有Bundle通过Class跳转界面
+     **/
+    public void startActivity(Class<?> cls, Bundle bundle) {
+        Intent intent = new Intent();
+        intent.setClass(this, cls);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        startActivity(intent);
+    }
+
 
     @Override
     protected void onDestroy() {
@@ -158,7 +174,13 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
             mPresenter.onDestroy();
         }
         mRxManager.clear();
-        mBind.unbind();
         AppManager.getAppManager().finishActivity(this);
+    }
+    
+    
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }

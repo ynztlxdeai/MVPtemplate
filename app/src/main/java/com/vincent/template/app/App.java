@@ -2,7 +2,6 @@ package com.vincent.template.app;
 
 import android.app.Application;
 
-import com.vincent.template.R;
 import com.vincent.template.utils.ToastUitl;
 
 /**
